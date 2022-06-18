@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES5",
+    "esModuleInterop": true,
+    "outDir": "dist",
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["./src/**/__tests__", "./src/test-utils"],
+}
