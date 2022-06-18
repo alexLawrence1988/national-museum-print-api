@@ -1,0 +1,55 @@
+- pipeline: "Dev"
+  on: "EVENT"
+  events:
+  - type: "PUSH"
+    refs:
+    - "refs/heads/dev"
+  priority: "NORMAL"
+  fetch_all_refs: true
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "SAM VALIDATE"
+    type: "AWS_CLI"
+    region: "eu-west-1"
+    execute_commands:
+    - "sam validate -t ./sam.dev.yml --config-env dev"
+    setup_commands:
+    - "/aws/env/bin/pip install aws-sam-cli"
+    shell: "SH"
+    integration_hash: "TODO:REPLACE"
+
+  - action: "SAM BUILD"
+    type: "AWS_CLI"
+    region: "eu-west-1"
+    execute_commands:
+    - "sam build -t ./sam.dev.yml --config-env dev"
+    setup_commands:
+    - "/aws/env/bin/pip install aws-sam-cli"
+    - "apt update"
+    - "apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates"
+    - "curl -sL https://deb.nodesource.com/setup_14.x | bash -"
+    - "apt -y install nodejs"
+    shell: "SH"
+    integration_hash: "TODO:REPLACE"
+
+  # - action: "RUN TESTS"
+  #   type: "BUILD"
+  #   working_directory: "/buddy/national-museum-print-api"
+  #   docker_image_name: "library/node"
+  #   docker_image_tag: "12"
+  #   execute_commands:
+  #   - "npm install"
+  #   - "npm run integ-test-dev"
+  #   volume_mappings:
+  #   - "/:/buddy/national-museum-print-api"
+  #   shell: "BASH"
+  
+  - action: "SAM DEPLOY"
+    type: "AWS_CLI"
+    region: "eu-west-1"
+    execute_commands:
+    - "sam deploy -t ./sam.dev.yml --config-env dev"
+    setup_commands:
+    - "/aws/env/bin/pip install aws-sam-cli"
+    shell: "SH"
+    integration_hash: "TODO:REPLACE"

@@ -1,0 +1,31 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+region = "eu-west-1"
+capabilities = "CAPABILITY_IAM"
+s3_prefix = "national-museum-print-deploy-dev"
+
+[dev]
+[dev.deploy]
+[dev.deploy.parameters]
+stack_name = "national-museum-print-dev"
+s3_bucket = "national-museum-print-deploy-dev"
+capabilities = "CAPABILITY_IAM"
+tags = "Service=\"Function\" Environment=\"DEV\""
+
+[uat]
+[uat.deploy]
+[uat.deploy.parameters]
+stack_name = "national-museum-print-uat"
+s3_bucket = "national-museum-print-deploy-uat"
+capabilities = "CAPABILITY_IAM"
+tags = "Service=\"Function\" Environment=\"UAT\""
+
+[prod]
+[prod.deploy]
+[prod.deploy.parameters]
+stack_name = "national-museum-print-prod"
+s3_bucket = "national-museum-print-deploy-prod"
+capabilities = "CAPABILITY_IAM"
+tags = "Service=\"Function\" Environment=\"PROD\""

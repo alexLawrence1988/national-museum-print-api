@@ -2,9 +2,12 @@
   "name": "national-museum-print-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --roots __tests__/unit",
+    "integ-test-dev": "NODE_ENV=dev jest --roots __tests__/integration",
+    "integ-test-uat": "NODE_ENV=uat jest --roots __tests__/integration",
+    "integ-test-live": "NODE_ENV=live jest --roots __tests__/integration",
+    "build": "rimraf dist && tsc -p tsconfig.build.json"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +17,8 @@
     "graphql-tools": "^8.2.12"
   },
   "devDependencies": {
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "aws-sdk": "^2.815.0",
+    "jest": "^26.6.3"
   }
 }
