@@ -1,5 +1,5 @@
 import { AxiosInstance, AxiosResponse } from 'axios';
-import { Print } from '../global/types';
+import { PrintQueryReturn, PrintQueryParamSet } from '../global/types';
 
 export default class NationalMuseumPrint {
 
@@ -13,15 +13,19 @@ export default class NationalMuseumPrint {
         this.axios = axios;
     }
 
-    async listByPage(page: number) : Promise<Array<Print>> {
+    //TODO: update return type to hard type
+    async listByPage(params: PrintQueryParamSet) : Promise<PrintQueryReturn> {
         let url: string = this.apiEndPoint;
-
-        url += `?classification=Prints`;
-        url += `&page=${page}`;
-        url += `&apikey=${this.apiKey}`;
+        // TODO: handle field value filtering better
+        const response: AxiosResponse = await this.axios.get(url, {
+            params: {
+                ...params,
+                apikey: this.apiKey,
+                q: "(accesslevel:1)AND(imagepermissionlevel:0)AND(verificationlevel:4)"
+            }
+        });
         
-        const response: AxiosResponse = await this.axios.get(url);
-        return response.data.records;
+        return response.data;
     }
 
 };
