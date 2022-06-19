@@ -13,6 +13,8 @@
     working_directory: "/buddy/national-museum-print-api"
     docker_image_name: "library/node"
     docker_image_tag: "16"
+    setup_commands:
+    - "npm install -g rimraf"
     execute_commands:
     - "npm run build"
     volume_mappings:
