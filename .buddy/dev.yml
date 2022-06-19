@@ -8,12 +8,6 @@
   fetch_all_refs: true
   fail_on_prepare_env_warning: true
   actions:
-  - action: "TS COMPILE"
-    execute_commands:
-    - "npm run build"
-    shell: "SH"
-    integration_hash: "Pr1gO3GWpmbkBPR6azJn4KRjLM"
-
   - action: "SAM VALIDATE"
     type: "AWS_CLI"
     region: "eu-west-2"
