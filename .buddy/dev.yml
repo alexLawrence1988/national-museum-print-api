@@ -16,7 +16,7 @@
     setup_commands:
     - "/aws/env/bin/pip install aws-sam-cli"
     shell: "SH"
-    integration_hash: "TODO:REPLACE"
+    integration_hash: "Pr1gO3GWpmbkBPR6azJn4KRjLM"
 
   - action: "SAM BUILD"
     type: "AWS_CLI"
@@ -30,7 +30,7 @@
     - "curl -sL https://deb.nodesource.com/setup_14.x | bash -"
     - "apt -y install nodejs"
     shell: "SH"
-    integration_hash: "TODO:REPLACE"
+    integration_hash: "Pr1gO3GWpmbkBPR6azJn4KRjLM"
 
   # - action: "RUN TESTS"
   #   type: "BUILD"
@@ -52,4 +52,4 @@
     setup_commands:
     - "/aws/env/bin/pip install aws-sam-cli"
     shell: "SH"
-    integration_hash: "TODO:REPLACE"
+    integration_hash: "Pr1gO3GWpmbkBPR6azJn4KRjLM"
