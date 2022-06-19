@@ -16,6 +16,7 @@
     setup_commands:
     - "npm install -g rimraf"
     - "npm install -g typescript"
+    - "npm install"
     execute_commands:
     - "npm run build"
     volume_mappings:
