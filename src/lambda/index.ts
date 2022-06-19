@@ -14,7 +14,7 @@ exports.handler = server.createHandler({
   expressGetMiddlewareOptions: {
     cors: {
       origin: "*",
-      credentials: true,
+      credentials: false,
     },
   },
 });

@@ -11,7 +11,7 @@
   
   - action: "SAM VALIDATE"
     type: "AWS_CLI"
-    region: "eu-west-1"
+    region: "eu-west-2"
     execute_commands:
     - "sam validate -t ./sam.uat.yml --config-env uat"
     setup_commands:
@@ -21,7 +21,7 @@
 
   - action: "SAM BUILD"
     type: "AWS_CLI"
-    region: "eu-west-1"
+    region: "eu-west-2"
     execute_commands:
     - "sam build -t ./sam.uat.yml --config-env uat"
     setup_commands:
@@ -48,7 +48,7 @@
   
   - action: "SAM DEPLOY UAT"
     type: "AWS_CLI"
-    region: "eu-west-1"
+    region: "eu-west-2"
     execute_commands:
     - "sam deploy -t ./sam.uat.yml --config-env uat"
     setup_commands:
@@ -63,7 +63,7 @@
 
   - action: "SAM DEPLOY LIVE"
     type: "AWS_CLI"
-    region: "eu-west-1"
+    region: "eu-west-2"
     execute_commands:    
     - "sam deploy -t ./sam.prod.yml --config-env prod"
     setup_commands:

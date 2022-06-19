@@ -10,7 +10,7 @@
   actions:
   - action: "SAM VALIDATE"
     type: "AWS_CLI"
-    region: "eu-west-1"
+    region: "eu-west-2"
     execute_commands:
     - "sam validate -t ./sam.dev.yml --config-env dev"
     setup_commands:
@@ -20,7 +20,7 @@
 
   - action: "SAM BUILD"
     type: "AWS_CLI"
-    region: "eu-west-1"
+    region: "eu-west-2"
     execute_commands:
     - "sam build -t ./sam.dev.yml --config-env dev"
     setup_commands:
@@ -46,7 +46,7 @@
   
   - action: "SAM DEPLOY"
     type: "AWS_CLI"
-    region: "eu-west-1"
+    region: "eu-west-2"
     execute_commands:
     - "sam deploy -t ./sam.dev.yml --config-env dev"
     setup_commands:

@@ -7,7 +7,8 @@
     "integ-test-dev": "NODE_ENV=dev jest --roots __tests__/integration",
     "integ-test-uat": "NODE_ENV=uat jest --roots __tests__/integration",
     "integ-test-live": "NODE_ENV=live jest --roots __tests__/integration",
-    "build": "rimraf dist && tsc -p tsconfig.build.json"
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "serve": "npm run build && sam local start-api -t ./sam.dev.yml --config-env dev"
   },
   "author": "",
   "license": "ISC",

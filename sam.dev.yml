@@ -6,7 +6,8 @@ Resources:
       Type: AWS::Serverless::Api
       Properties:
         StageName: dev
-        EndpointConfiguration: REGIONAL
+        EndpointConfiguration: 
+          Type: REGIONAL
 
   RestApiMapping:
     Type: AWS::ApiGatewayV2::ApiMapping
@@ -22,16 +23,15 @@ Resources:
       FunctionName: NationalMuseumPrintGQL-DEV
       Handler: dist/lambda/index.handler
       Layers:
-        - 'arn:aws:lambda:eu-west-1:837607282302:layer:node-core:1'
-        - 'arn:aws:lambda:eu-west-1:837607282302:layer:axios:1'
+        - 'arn:aws:lambda:eu-west-2:275989709466:layer:axiox-graphql-bundle:1'
       Environment:
         Variables:
           NODE_ENV: dev
           API_URL: 'https://api.harvardartmuseums.org/object'
           API_KEY: 'c28e4be0-4c0e-11ea-90d6-25d9a9fe80fc'
       Runtime: nodejs14.x
-      MemorySize: 512
-      Timeout: 100
+      MemorySize: 1024
+      Timeout: 10000
       Description: A GraphQL Lambda function for retreiving National Museum Prints.
       Policies:
         - AWSLambdaBasicExecutionRole

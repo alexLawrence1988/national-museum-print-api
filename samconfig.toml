@@ -2,7 +2,7 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-region = "eu-west-1"
+region = "eu-west-2"
 capabilities = "CAPABILITY_IAM"
 s3_prefix = "national-museum-print-deploy-dev"
 

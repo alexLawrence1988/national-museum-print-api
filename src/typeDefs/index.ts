@@ -107,8 +107,32 @@ export default gql`
     worktypes: [Worktypes!]
   }
 
+  enum SortOrder {
+    asc
+    desc
+  }
+
+  type PrintInfo {
+    totalrecordsperquery: Float
+    totalrecords: Float
+    pages: Float
+    page: Float
+    next: String
+    prev: String
+  }
+
+  type PrintQueryReturn {
+    info: PrintInfo,
+    records: [Print],
+}
+
   type Query {
-    getPrints(page: Float!): [Print!]
+    listByPage(classification: String!,
+               page: Float!,                
+               pageSize: Float!, 
+               sort: String!, 
+               sortOrder: SortOrder!, 
+               hasImage: Float!): PrintQueryReturn
   }
 
   type SeeAlso {
