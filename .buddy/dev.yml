@@ -8,11 +8,17 @@
   fetch_all_refs: true
   fail_on_prepare_env_warning: true
   actions:
-  - action: "SAM VALIDATE"
+  - action: "TS compile"
     type: "BUILD"
+    working_directory: "/buddy/national-museum-print-api"
+    docker_image_name: "library/node"
+    docker_image_tag: "16"
     execute_commands:
     - "npm run build"
-    shell: "SH"
+    volume_mappings:
+    - "/:/buddy/national-museum-print-api"
+    cache_base_image: true
+    shell: "BASH"
 
   - action: "SAM VALIDATE"
     type: "AWS_CLI"
