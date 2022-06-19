@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "jest --roots __tests__/unit",
-    "integ-test-dev": "NODE_ENV=dev jest --roots __tests__/integration",
+    "integ-test-dev": "SET NODE_ENV=dev&& jest --roots __tests__/integration",
     "integ-test-uat": "NODE_ENV=uat jest --roots __tests__/integration",
     "integ-test-live": "NODE_ENV=live jest --roots __tests__/integration",
     "build": "rimraf dist && tsc -p tsconfig.build.json",
