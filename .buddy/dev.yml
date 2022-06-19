@@ -17,6 +17,7 @@
     - "npm install -g rimraf"
     - "npm install -g typescript"
     - "npm install apollo-server-lambda"
+    - "npm install graphql"
     - "npm install axios"
     execute_commands:
     - "npm run build"
