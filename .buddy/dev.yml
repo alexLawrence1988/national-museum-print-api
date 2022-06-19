@@ -16,7 +16,8 @@
     setup_commands:
     - "npm install -g rimraf"
     - "npm install -g typescript"
-    - "npm install"
+    - "npm install apollo-server-lambda"
+    - "npm install axios"
     execute_commands:
     - "npm run build"
     volume_mappings:
