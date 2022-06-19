@@ -9,7 +9,8 @@ It can be used to query the following:
 
 It uses AWS SAM to contruct a cloudformation stack. This stack then deploys the following architecture within AWS:
 
-<iframe src="https://drive.google.com/file/d/1ltPtOUZYM_5rZLXPRFeTNHZQxWiMVtz9/preview" width="640" height="480" allow="autoplay"></iframe>
+![alt text](https://i.ibb.co/RHhg49L/heni.jpg)
+
 
 ## Live demo
 This api have been deployed to a cloud development environment within AWS.
