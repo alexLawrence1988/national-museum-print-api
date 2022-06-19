@@ -12,7 +12,7 @@
     type: "BUILD"
     working_directory: "/buddy/national-museum-print-api"
     docker_image_name: "library/node"
-    docker_image_tag: "16"
+    docker_image_tag: "14"
     setup_commands:
     - "npm install -g rimraf"
     - "npm install -g typescript"
